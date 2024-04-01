@@ -4,8 +4,8 @@ test('should allow the user to sign in', async ({ page }) => {
   await page.goto(UI_URL);
   await page.getByRole('link',{name: 'Sign In'}).click();
   await expect(page.getByRole("heading",{name: "Sign In"})).toBeVisible();
-  await page.locator("[name=email]").fill("1@1.com");
-  await page.locator("[name=password]").fill("password");
+  await page.locator("[name=email]").fill("neelamjain@gmail.com");
+  await page.locator("[name=password]").fill("123123");
 
   await page.getByRole("button",{name:"Login"}).click();
 
@@ -26,8 +26,8 @@ test("should allow user to register",async({page})=>{
  await page.getByRole("link",{name: "Create an account here"}).click();
  await expect(page.getByRole("heading",{name: "Create an account "})).toBeVisible();
 
-await page.locator("[name=firstname]").fill("test_firstname")
-await page.locator("[name=lastname]").fill("test_lastname")
+await page.locator("[name=firstName]").fill("test_firstname")
+await page.locator("[name=lastName]").fill("test_lastname")
 await page.locator("[name=email]").fill(testEmail)
 await page.locator("[name=password]").fill("password123")
 await page.locator("[name=confirmPassword]").fill("password123")
